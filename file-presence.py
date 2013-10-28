@@ -3,8 +3,8 @@
   file-presence.py [--database=<database>]
 """
 
-from entities import *
-from util import *
+from bansheefixer.entities import *
+from bansheefixer.util import *
 from docopt import docopt
 
 

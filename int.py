@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import sqlite3
 import urllib
 from urllib import parse
@@ -7,9 +6,9 @@ import stagger
 
 import os.path
 
-from entities import *
-from util import *
-from fixes import *
+from bansheefixer.entities import *
+from bansheefixer.util import *
+from bansheefixer.fixes import *
 
 
 engine = create_engine('sqlite:////home/leprechaun/.config/banshee-1/banshee.db')

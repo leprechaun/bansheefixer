@@ -1,4 +1,4 @@
-from entities import *
+from bansheefixer.entities import *
 
 class Helper(object):
     def __init__(self, db):
