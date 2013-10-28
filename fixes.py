@@ -49,3 +49,16 @@ class CapitalizeTitle(Fixer):
     def apply_track(self, track):
         track.Title = track.Title.title()
 
+class VinylCaptionsInTitle(Fixer):
+    def __init__(self, seperator = " ", remove_caption=False, set_track_number=True):
+        self._remove_caption = remove_caption
+        self._set_track_number = set_track_number
+        self._seperator = seperator
+
+    def apply(self, wl):
+        tmp = [(t.Title.split(self._seperator, 1)[0], t) for t in wl]
+        tmp.sort()
+        i = 1
+        for t in tmp:
+            t[1].TrackNumber = i
+            i = i + 1
