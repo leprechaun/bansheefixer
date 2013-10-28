@@ -62,6 +62,8 @@ Will do what you think they do.
 
     wl.sync_tags()
 
+You should run session.commit() to write the changes to the database. The script could crash if you keep banshee running while doing this, but more often than not, it does not. The WorkingList in banshee will refresh next time you play one of its items.
+
 will write the tags to all files in the WorkingList, provided they are found.
 
 WorkingList.__repr__ is meant to be human readable, as such:
