@@ -64,6 +64,31 @@ Will do what you think they do.
 
 will write the tags to all files in the WorkingList, provided they are found.
 
+WorkingList.__repr__ is meant to be human readable, as such:
+
+    >>> wl
+    Artists:
+    - #1209 Jamiroquai
+    Albums:
+    - #1845 Emergency On Planet Earth (None)
+
+    +----+------------+---------------------------+--------------------------------------+
+    | 0  | Jamiroquai | Emergency On Planet Earth | 1  When You Gonna Learn (Digerido    |
+    | 1  | Jamiroquai | Emergency On Planet Earth | 2  Too Young To Die                  |
+    | 2  | Jamiroquai | Emergency On Planet Earth | 3  Hooked Up                         |
+    | 3  | Jamiroquai | Emergency On Planet Earth | 4  If I Like It, I Do It             |
+    | 4  | Jamiroquai | Emergency On Planet Earth | 5  Music Of The Mind                 |
+    | 5  | Jamiroquai | Emergency On Planet Earth | 6  Emergency On Planet Earth         |
+    | 6  | Jamiroquai | Emergency On Planet Earth | 7  Whatever It Is, I Just Can't Stop |
+    | 7  | Jamiroquai | Emergency On Planet Earth | 8  Blow Your Mind                    |
+    | 8  | Jamiroquai | Emergency On Planet Earth | 9  Revolution 1993                   |
+    | 9  | Jamiroquai | Emergency On Planet Earth | 10 Didgin' Out                       |
+    +----+------------+---------------------------+--------------------------------------+
+
+List indexes are given on the left so you can easily do slicing, eg
+
+    new_wl = WorkingList(wl[1:])
+
 
 
 Fixes
@@ -80,3 +105,7 @@ The fixes module include common fixes I've needed on my collection
     f = StripFromTitle("Jamiroquai - ")
     f.apply(wl)
 
+
+Other files
+-----------
+file-presence.py is an example script that checks for files that don't exist in your library. There may be a bug as I suspect the inplementation of urllib.parse.unquote is not the same as the one in banshee (big surprise).
