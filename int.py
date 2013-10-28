@@ -9,6 +9,7 @@ import os.path
 
 from entities import *
 from util import *
+from fixes import *
 
 
 engine = create_engine('sqlite:////home/leprechaun/.config/banshee-1/banshee.db')
