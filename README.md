@@ -7,9 +7,14 @@ BansheeFixer is meant to be a small Python 3 DSL based on SQLAlchemy that allows
 Entities
 --------
 
-Artist has Albums and Tracks as relationships, and provides the appropriate backrefs
-Album has Artist backref, and Tracks collection
-Track has Artist and Album backrefs
+* Artist
+Has Albums and Tracks as relationships and provides the appropriate backrefs
+
+* Album
+Has the Artist backref and a Tracks collection
+
+* Track
+Has Artist and Album backrefs. See also Track.Location (translates Track.Uri), Track.Exits (check file presence)
 
 
 Running
