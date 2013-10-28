@@ -113,6 +113,11 @@ Other files
 file-presence.py is an example script that checks for files that don't exist in your library. There may be a bug as I suspect the inplementation of urllib.parse.unquote is not the same as the one in banshee (big surprise).
 
 
+Things you should know
+----------------------
+It's worth noting that BansheeFixer does not take care of moving or renaming files in your library. That is both a precaution, but also, Banshee, should you set it to, will do so automatically when it notices the metadata and resulting path are out of sync.
+
+
 
 Current problems
 ----------------
