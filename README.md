@@ -1,7 +1,7 @@
 BansheeFixer
 =============
 
-Banshee Fixer is meant to be a small DSL based on Python's SQLAlchemy that allows for fixing of ID3 tags and Banshee's sqlite metadata.
+BansheeFixer is meant to be a small Python 3 DSL based on SQLAlchemy that allows for fixing of ID3 tags and Banshee's sqlite metadata. ID3 data is handled by the stagger library.
 
 
 Entities
@@ -16,7 +16,7 @@ Running
 -------
 You can run BansheeFixer by running python in interactive mode.
 
-    python -i int.py [--database=path_to_your_banshee_data]
+    python3 -i int.py [--database=path_to_your_banshee_data]
 
 
 
