@@ -111,3 +111,11 @@ The fixes module include common fixes I've needed on my collection
 Other files
 -----------
 file-presence.py is an example script that checks for files that don't exist in your library. There may be a bug as I suspect the inplementation of urllib.parse.unquote is not the same as the one in banshee (big surprise).
+
+
+
+Current problems
+----------------
+I haven't managed to get SQLAlchemy events working completely. Look at entities.py,
+when you update Track.Title, it should also update Track.TitleLowered appropriately.
+However, I haven't managed to get events working on the backrefs, eg, change the artist on a track. This may be a source of issues because the banshee database does a bit of denormalization. Nothing that will delete or otherwise irreperably harm your library, though (fingers crossed).
