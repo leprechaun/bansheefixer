@@ -59,3 +59,19 @@ Will do what you think they do.
 
 will write the tags to all files in the WorkingList, provided they are found.
 
+
+
+Fixes
+-----
+The fixes module include common fixes I've needed on my collection
+
+    # TrackNumberInTitle takes care of albums with titles like
+    # "01 - The Return Of The Space Cowboy"
+    # It will .split() Track.Title, set Track.TrackNumber and Track.Title appropriately
+    f = TrackNumberInTitle(" - ")
+    f.apply(wl)
+
+    # StripFromTitle will run Track.Title.lstrip()
+    f = StripFromTitle("Jamiroquai - ")
+    f.apply(wl)
+
