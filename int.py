@@ -15,8 +15,12 @@ engine = create_engine('sqlite:////home/leprechaun/.config/banshee-1/banshee.db'
 Session = sessionmaker(bind=engine)
 session = Session()
 
-logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+#logging.basicConfig()
+#logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 q = session.query
 h = Helper(session)
+
+def commit():
+    session.commit()
+    wl.sync_tags()

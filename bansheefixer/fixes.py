@@ -5,6 +5,8 @@ class Fixer(object):
         for t in wl:
             self.apply_track(t)
 
+        return wl
+
     def apply_track(self, track):
         True
 
@@ -21,6 +23,8 @@ class FixerGroup(object):
     def apply(self, wl):
         for f in self._fixes:
             f.apply(wl)
+
+        return wl
 
 class TrackNumberInTitle(Fixer):
     def __init__(self, seperator=" "):
