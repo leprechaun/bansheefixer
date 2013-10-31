@@ -5,13 +5,13 @@ class Helper(object):
         self.db = db
 
     def artist(self, name):
-        return self.db.query(Artist).filter_by(NameLowered=name.lower())
+        return self.db.query(Artist).filter(Artist.Name.like(name))
 
     def album(self, title):
-        return self.db.query(Album).filter_by(TitleLowered=title.lower())
+        return self.db.query(Album).filter(Album.Title.like(title))
 
     def track(self, title):
-        return self.db.query(Track).filter_by(TitleLowered=title.lower())
+        return self.db.query(Track).filter(Track.Title.like(title))
 
 class WorkingList(list):
     def __init__(self, tracklist):

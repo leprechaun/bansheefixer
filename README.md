@@ -39,7 +39,7 @@ Any of those methods will return a *sqlalchemy.orm.query.Query* object. Therefor
     h.artist('jamiroquai').all()
     h.artist('jamiroquai').first()
 
-The matching is, for now, simply done on the "NameLowered" or "TitleLowered" of the given entities.
+The matching is done using LIKE on Title or Name, no '%' are inserted automatically.
 
 
 WorkingList
