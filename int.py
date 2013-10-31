@@ -1,17 +1,28 @@
 #!/usr/bin/env python3
+"""Usage:
+  int.py [--database=<database>]
+"""
+
 import sqlite3
 import urllib
 from urllib import parse
 import stagger
-
+from docopt import docopt
 import os.path
 
 from bansheefixer.entities import *
 from bansheefixer.util import *
 from bansheefixer.fixes import *
 
+arguments = docopt(__doc__, version='0.1.1rc')
+if arguments['--database'] is not None:
+    path = os.path.expanduser(arguments['--database'])
+else:
+    path = os.path.expanduser("~/.config/banshee-1/banshee.db")
 
-engine = create_engine('sqlite:////home/leprechaun/.config/banshee-1/banshee.db')
+engine = create_engine('sqlite:///' + path)
+
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
