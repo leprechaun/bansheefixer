@@ -32,6 +32,17 @@ session = Session()
 q = session.query
 h = Helper(session)
 
+tv = TableView()
+tv.add_column("#", lambda t: str(t.__index__))
+tv.add_column("ID", lambda t: str(t.TrackID))
+tv.add_column("Artist", lambda t: str(t.Artist.Name) + " (#" + str(t.Artist.ArtistID)+")")
+tv.add_column("Album", lambda t: str(t.Album.Title) + " (#" + str(t.Album.AlbumID)+")")
+tv.add_column("T#", lambda t: "#" + str(t.TrackNumber) + "/" + str(t.TrackCount))
+tv.add_column("Title", lambda t: str(t.Title))
+
+WorkingList.__repr__ = tv.get_repr()
+
+
 def commit():
     session.commit()
     wl.sync_tags()
