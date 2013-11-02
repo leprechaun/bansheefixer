@@ -38,8 +38,6 @@ class TableView(object):
 
             lengths_reduced = [max(length) for length in lengths]
 
-            print(lengths_reduced)
-
             lines = []
 
             header = ["" for c in range(len(lengths_reduced))]

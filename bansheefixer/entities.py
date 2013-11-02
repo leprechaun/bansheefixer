@@ -91,6 +91,10 @@ class Track(Base):
     def Location(self):
         return urllib.parse.unquote(self.Uri).replace("file://", "")
 
+    @Location.setter
+    def Location(self, location):
+        self.Uri = "file://" + urllib.parse.quote(location)
+
     @property
     def Exists(self):
         return os.path.exists(self.Location)
